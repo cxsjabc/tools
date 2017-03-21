@@ -1,4 +1,5 @@
 #!/bin/bash
+# run on Mac OS
 
 while [ ! -z $1 ]
 do
