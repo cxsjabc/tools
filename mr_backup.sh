@@ -12,4 +12,4 @@ source common.sh
 DEST=$1
 shift
 
-gcc $@ -Wall -g -o $DEST $DEST.c ${COMMON_C} && ./$DEST
+gcc $@ -Wall -g -o $DEST.elf $DEST.c ${COMMON_C} && ./$DEST.elf
