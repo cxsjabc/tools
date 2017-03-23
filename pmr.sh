@@ -6,6 +6,7 @@ then
 	exit -1
 fi
 
+REL_PATH=./
 source common.sh
 DEST=$1
 shift
