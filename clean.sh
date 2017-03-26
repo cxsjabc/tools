@@ -12,8 +12,8 @@ ELF="*.elf"
 DSYM="*.dSYM"
 PRECESSED="*.precessed"
 
-FILES=`find $DIR -name $ELF -or -name $DSYM -or -name $PRECESSED` 
-#echo "FILES:$FILES"
+FILES=`find $DIR -name "$ELF" -or -name "$DSYM" -or -name "$PRECESSED"` 
+echo "FILES:$FILES"
 echo $FILES | xargs rm -rf
 
 #rm -rf *.elf
