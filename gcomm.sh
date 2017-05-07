@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# generate a easy c file
+# generate a common c file
 # writer: xichen
 
 echo "Owner: xichen"
@@ -39,40 +39,40 @@ if [ $1 = "-c" ] ; then
 	# copy file from START to END
 	#echo "START:$START, END:$END"
 	while [ $START -le $END ]; do
-		if [ -e $START.easy.c ] ; then
-			echo "$START.easy.c already exists!"
+		if [ -e $START.c ] ; then
+			echo "$START.c already exists!"
 			((++IGN_CNT))
 			((++START))
 			continue
 		fi 
-		cp _codeup.c $START.easy.c
+		cp _codeup.c $START.c
 		if [ $? -eq 0 ] ; then
-			echo "$START.easy.c is created!"
+			echo "$START.c is created!"
 			((++CP_CNT))
 		else
-			echo "Error when copy:$START.easy.c!"
+			echo "Error when copy:$START.c!"
 			((++ERR_CNT))
 		fi
 		((++START))
 	done
 	echo "Copied:$CP_CNT, Ignored:$IGN_CNT, Errored:$ERR_CNT"
-	exit 0	
+	continue
 fi
 
-if [ -e $1.easy.c ] ; then
-	echo "$1.easy.c already exists!"
+if [ -e $1.c ] ; then
+	echo "$1.c already exists!"
 	((++IGN_CNT))
 	shift
 	continue
 fi 
 
-cp _codeup.c $1.easy.c
+cp _codeup.c $1.c
 
 if [ $? -eq 0 ] ; then
-	echo "$1.easy.c is created!"
+	echo "$1.c is created!"
 	((++CP_CNT))
 else
-	echo "Error when copy:$1.easy.c!"
+	echo "Error when copy:$1.c!"
 	((++ERR_CNT))
 fi
 
