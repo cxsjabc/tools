@@ -9,6 +9,9 @@ FILE_CNT=$#
 CONT=0
 START=
 END=
+CP_CNT=0
+ERR_CNT=0
+IGN_CNT=0
 
 while true
 do
@@ -22,7 +25,7 @@ fi
 
 if [ -z $1 ]
 then
-	exit -1
+	break
 fi
 
 if [ $1 = "-c" ] ; then
@@ -33,9 +36,6 @@ if [ $1 = "-c" ] ; then
 	END=$1
 	shift
 	
-	CP_CNT=0
-	ERR_CNT=0
-	IGN_CNT=0
 	# copy file from START to END
 	#echo "START:$START, END:$END"
 	while [ $START -le $END ]; do
@@ -61,11 +61,22 @@ fi
 
 if [ -e $1.easy.c ] ; then
 	echo "$1.easy.c already exists!"
+	((++IGN_CNT))
 	shift
 	continue
 fi 
 
 cp _codeup.c $1.easy.c
 
+if [ $? -eq 0 ] ; then
+	echo "$1.easy.c is created!"
+	((++CP_CNT))
+else
+	echo "Error when copy:$1.easy.c!"
+	((++ERR_CNT))
+fi
+
 shift
 done
+
+echo "Copied:$CP_CNT, Ignored:$IGN_CNT, Errored:$ERR_CNT"
