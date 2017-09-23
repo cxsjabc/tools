@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 		printf("sizeof(short):%d\n", b);
 		printf("sizeof(ing):%d\n", c);
 		printf("sizeof(long):%d\n", d);
-		printf("sizeof(long long):%d\n", d);
+		printf("sizeof(long long):%d\n", sizeof(long long));
 		printf("sizeof(float):%lu\n", sizeof(float));
 		printf("sizeof(double):%lu\n", sizeof(double));
 		printf("sizeof(void *):%lu\n", sizeof(void *));
