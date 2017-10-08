@@ -1,9 +1,13 @@
+/*
+* Copyright by xichen(Xi.chen)  511272827@qq.com
+*/
 #include "common_local.h"
 
 int main(int argc, char *argv[])
 {
 	int i;
-	
+
+	printf("[W] Owner: Xi Chen!\n");	
 	if(argc == 1) {
 
 		for(i = 0; i < 128; ++i) {

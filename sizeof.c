@@ -1,3 +1,6 @@
+/*
+* Copyright by xichen(Xi.chen)  511272827@qq.com
+*/
 #include "common_local.h"
 
 const char *type_name[] = {
@@ -36,7 +39,7 @@ int get_size_from_type_arr(const char *type)
 int main(int argc, char *argv[])
 {
 	int a, b, c, d;
-	LOG_W("Owner: xi chen!\n");	
+	LOG_W("Owner: Xi Chen!\n");	
 	if(argc == 1) {	// print all sizeof infos
 		a = sizeof(char);
 		b = sizeof(short); 
@@ -47,7 +50,7 @@ int main(int argc, char *argv[])
 		printf("sizeof(short):%d\n", b);
 		printf("sizeof(ing):%d\n", c);
 		printf("sizeof(long):%d\n", d);
-		printf("sizeof(long long):%d\n", sizeof(long long));
+		printf("sizeof(long long):%lu\n", sizeof(long long));
 		printf("sizeof(float):%lu\n", sizeof(float));
 		printf("sizeof(double):%lu\n", sizeof(double));
 		printf("sizeof(void *):%lu\n", sizeof(void *));
