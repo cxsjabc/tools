@@ -3,7 +3,9 @@
 */
 #include "common_local.h"
 
+#ifndef BUF_SIZE
 #define	BUF_SIZE	4096
+#endif
 
 int main(int argc, char *argv[])
 {
