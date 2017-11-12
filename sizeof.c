@@ -12,6 +12,9 @@ const char *type_name[] = {
 	"float",
 	"double",
 	"p",				// means pointer
+	"off_t",
+	"size_t",
+	"ssize_t",
 };
 
 const int type_sizeof[] = {
@@ -23,6 +26,9 @@ const int type_sizeof[] = {
 	sizeof(float),
 	sizeof(double),
 	sizeof(void *),
+	sizeof(off_t),
+	sizeof(size_t),
+	sizeof(ssize_t),
 };
 
 // if return -1, it means the type is unknown!
