@@ -14,4 +14,4 @@ DEST=${1%.*}
 ARG1=$1
 shift
 
-gcc $@ -Wall -g -o $DEST $ARG1 ${COMMON_C} && ./$DEST
+gcc $@ -Wall -g -o $DEST.elf $ARG1 ${COMMON_C} && ./$DEST.elf
